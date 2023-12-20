@@ -1,0 +1,14 @@
+{
+  "@@locale": "ru",
+  "homeTitle": "Погода",
+  "searchHint": "Поиск местоположения",
+  "unknownLocalName": "Название места неизвестно",
+  "nothingFound": "Ничего не найдено",
+  "feelsLike": "Ощущается как",
+  "hourlyForecastLabel": "Прогноз по часам",
+  "dailyForecastLabel": "Прогноз по дням",
+  "footer": "Данные предоставлены сервисом OpenWeather",
+  "locatingError": "Ошибка определения местоположения",
+  "locationSearchError": "Ошибка поиска местоположения",
+  "loadingError": "Ошибка загрузки данных"
+}

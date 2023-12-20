@@ -1,0 +1,14 @@
+{
+  "@@locale": "en",
+  "homeTitle": "Weather",
+  "searchHint": "Search for a location",
+  "unknownLocalName": "Location name unknown",
+  "nothingFound": "Nothing found",
+  "feelsLike": "Feels like",
+  "hourlyForecastLabel": "Hourly forecast",
+  "dailyForecastLabel": "Daily forecast",
+  "footer": "Data is provided by the OpenWeather service",
+  "locatingError": "Getting location error",
+  "locationSearchError": "Location search error",
+  "loadingError": "Loading data error"
+}
