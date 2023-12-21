@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../domain/blocs/blocs.dart';
+import '../../../domain/blocs/blocs.dart';
 
 class LanguageChooser extends StatelessWidget {
   const LanguageChooser({super.key});

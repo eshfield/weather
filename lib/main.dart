@@ -8,7 +8,7 @@ import 'package:logger/logger.dart';
 import 'data/repositories/api_repository.dart';
 import 'data/repositories/local_repository.dart';
 import 'domain/blocs/blocs.dart';
-import 'presentation/screens/home_screen/home_screen.dart';
+import 'presentation/home_screen/home_screen.dart';
 import 'theme.dart';
 
 void main() => runApp(const MainApp());

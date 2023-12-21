@@ -4,10 +4,7 @@ class ErrorSnackBar extends SnackBar {
   final String text;
 
   ErrorSnackBar(this.text, {super.key})
-      : super(
-          content: ErrorSnackBarContent(text),
-          backgroundColor: Colors.red,
-        );
+      : super(content: ErrorSnackBarContent(text));
 }
 
 class ErrorSnackBarContent extends StatelessWidget {
@@ -19,11 +16,17 @@ class ErrorSnackBarContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Icon(Icons.error_outline),
+        const Icon(
+          Icons.error_outline,
+          color: Colors.white,
+        ),
         const SizedBox(width: 8),
         Text(
           text,
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: Theme.of(context)
+              .textTheme
+              .bodyMedium!
+              .copyWith(color: Colors.white),
         ),
       ],
     );

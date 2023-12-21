@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../../../domain/models/models.dart';
+import '../../../domain/models/models.dart';
 import 'widgets.dart';
 
 const dailyForecastItemCount = 7; // up to 7

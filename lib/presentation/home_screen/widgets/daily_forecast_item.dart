@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 
-import '../../../../domain/models/models.dart';
+import '../../../domain/models/models.dart';
 
 class DailyForecastItem extends StatelessWidget {
   final Weather weather;

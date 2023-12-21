@@ -8,7 +8,8 @@
   "hourlyForecastLabel": "Прогноз по часам",
   "dailyForecastLabel": "Прогноз по дням",
   "footer": "Данные предоставлены сервисом OpenWeather",
+  "loadingError": "Ошибка загрузки данных",
+  "loadingErrorText": "Проверьте интернет-соединение и/или попробуйте ещё раз",
   "locatingError": "Ошибка определения местоположения",
-  "locationSearchError": "Ошибка поиска местоположения",
-  "loadingError": "Ошибка загрузки данных"
+  "locationSearchError": "Ошибка поиска местоположения"
 }

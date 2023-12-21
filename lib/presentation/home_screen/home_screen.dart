@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../../domain/blocs/blocs.dart';
-import '../../common/error_snack_bar.dart';
+import '../../domain/blocs/blocs.dart';
+import 'widgets/error_snack_bar.dart';
 
+import 'widgets/error_view.dart';
 import 'widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -87,11 +88,9 @@ class Content extends StatelessWidget {
         if (state is ForecastLoadInProgress) {
           if (state.shouldHideProgress) return const SizedBox.expand();
           return const Center(child: CircularProgressIndicator());
-          // TODO show indicator on top of the old data? (stack)
         } else if (state is ForecastLoadInitial ||
             state is ForecastLoadFailure) {
-          return const SizedBox.shrink();
-          // TODO show error view
+          return const ErrorView();
         }
         final forecast = (state as ForecastLoadSuccess).forecast;
         return Column(

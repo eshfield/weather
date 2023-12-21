@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 
-import '../../../../domain/models/models.dart';
+import '../../../domain/models/models.dart';
 
 class HourlyForecastItem extends StatelessWidget {
   final Weather weather;

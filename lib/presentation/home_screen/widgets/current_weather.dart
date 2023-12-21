@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart' show toBeginningOfSentenceCase;
 
-import '../../../../domain/models/models.dart';
+import '../../../domain/models/models.dart';
 
 class CurrentWeather extends StatelessWidget {
   final Weather weather;
