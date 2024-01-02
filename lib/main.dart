@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:logger/logger.dart';
 
 import 'data/repositories/api_repository.dart';
 import 'data/repositories/local_repository.dart';
 import 'domain/blocs/blocs.dart';
-import 'l10n/gen/app_localizations.dart';
 import 'presentation/home_screen/home_screen.dart';
 import 'theme.dart';
 

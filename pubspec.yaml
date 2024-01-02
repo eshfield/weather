@@ -39,6 +39,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/weather_icons/
+  generate: true
   uses-material-design: true
 
 flutter_launcher_icons:
