@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../domain/blocs/blocs.dart';
+import '../../../utils/localization_extension.dart';
 
 class LocationChooser extends StatelessWidget {
   const LocationChooser({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
     return BlocBuilder<LocationCubit, LocationState>(
       builder: (context, state) {
         final locale = Localizations.localeOf(context);
@@ -30,7 +29,7 @@ class LocationChooser extends StatelessWidget {
           viewConstraints: const BoxConstraints(maxHeight: 340),
           suggestionsBuilder: suggestionsBuilder,
           textCapitalization: TextCapitalization.words,
-          viewHintText: l10n.searchHint,
+          viewHintText: context.l10n.searchHint,
         );
       },
     );
@@ -40,7 +39,6 @@ class LocationChooser extends StatelessWidget {
     BuildContext context,
     SearchController controller,
   ) {
-    final l10n = AppLocalizations.of(context);
     final locale = Localizations.localeOf(context);
     if (controller.text.isEmpty) return [];
     // TODO move this code to the viewOnChanged when this PR comes to stable
@@ -54,10 +52,10 @@ class LocationChooser extends StatelessWidget {
           if (state is LocationSearchInProgress) {
             return const LinearProgressIndicator();
           } else if (state is LocationSearchFailure) {
-            return Center(child: Text(l10n.locationSearchError));
+            return Center(child: Text(context.l10n.locationSearchError));
           } else if (state is LocationSearchSuccess) {
             if (state.locations.isEmpty) {
-              return Center(child: Text(l10n.nothingFound));
+              return Center(child: Text(context.l10n.nothingFound));
             }
             return Column(
               children: state.locations.map((location) {

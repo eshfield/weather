@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import '../../domain/blocs/blocs.dart';
-import 'widgets/error_snack_bar.dart';
 
+import '../../domain/blocs/blocs.dart';
+import '../../utils/localization_extension.dart';
+import 'widgets/error_snack_bar.dart';
 import 'widgets/error_view.dart';
 import 'widgets/widgets.dart';
 
@@ -12,7 +12,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
     return Scaffold(
       body: MultiBlocListener(
         listeners: [
@@ -21,7 +20,7 @@ class HomeScreen extends StatelessWidget {
             listener: (context, _) {
               ScaffoldMessenger.of(context)
                 ..hideCurrentSnackBar()
-                ..showSnackBar(ErrorSnackBar(l10n.locatingError));
+                ..showSnackBar(ErrorSnackBar(context.l10n.locatingError));
             },
           ),
           BlocListener<ForecastCubit, ForecastState>(
@@ -29,7 +28,7 @@ class HomeScreen extends StatelessWidget {
             listener: (context, _) {
               ScaffoldMessenger.of(context)
                 ..hideCurrentSnackBar()
-                ..showSnackBar(ErrorSnackBar(l10n.loadingError));
+                ..showSnackBar(ErrorSnackBar(context.l10n.loadingError));
             },
           ),
         ],

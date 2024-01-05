@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 
 import '../../../domain/models/models.dart';
+import '../../../utils/localization_extension.dart';
 
 class DailyForecastItem extends StatelessWidget {
   final Weather weather;
@@ -12,7 +12,6 @@ class DailyForecastItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
     final dt = DateTime.fromMillisecondsSinceEpoch(weather.timestamp * 1000);
     final locale = Localizations.localeOf(context);
     final formatter = DateFormat.E(locale.toString());
@@ -37,7 +36,7 @@ class DailyForecastItem extends StatelessWidget {
         SizedBox(
           width: 140,
           child: Text(
-            '${l10n.feelsLike} ${weather.feelsLike.round()}°',
+            '${context.l10n.feelsLike} ${weather.feelsLike.round()}°',
             style: Theme.of(context).textTheme.bodySmall,
           ),
         ),

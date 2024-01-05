@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart' show toBeginningOfSentenceCase;
 
 import '../../../domain/models/models.dart';
+import '../../../utils/localization_extension.dart';
 
 class CurrentWeather extends StatelessWidget {
   final Weather weather;
@@ -12,7 +12,6 @@ class CurrentWeather extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
     final languageCode = Localizations.localeOf(context).languageCode;
     final units = languageCode == 'en' ? 'F' : 'C';
     return Column(
@@ -50,7 +49,7 @@ class CurrentWeather extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              '${l10n.feelsLike} ${weather.feelsLike.round()}°',
+              '${context.l10n.feelsLike} ${weather.feelsLike.round()}°',
               style: Theme.of(context).textTheme.titleSmall,
             ),
             ConstrainedBox(

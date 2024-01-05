@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../domain/models/models.dart';
+import '../../../utils/localization_extension.dart';
 import 'widgets.dart';
 
 const dailyForecastItemCount = 7; // up to 7
@@ -13,7 +13,6 @@ class DailyForecast extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
     final items = weathers.sublist(1, dailyForecastItemCount + 1);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +20,7 @@ class DailyForecast extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 4),
           child: Text(
-            l10n.dailyForecastLabel,
+            context.l10n.dailyForecastLabel,
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ),

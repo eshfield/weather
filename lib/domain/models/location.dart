@@ -17,6 +17,6 @@ class Location {
 
   String getLocationName(Locale locale) {
     final city = localNames[locale.languageCode] ?? originalName;
-    return '$city, $country' ;
+    return '$city, $country';
   }
 }
